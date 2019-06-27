@@ -1,0 +1,18 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'project2D'
+include 'aservice'
+include 'bservice'
+include 'cservice'
+include 'eureka'
+include 'zuul'
+
+
+project(':aservice').name = 'aservice'
+project(':bservice').name = 'bservice'
+project(':cservice').name = 'cservice'
+project(':eureka').name = 'eureka'
+project(':zuul').name = 'zuul'
