@@ -16,7 +16,7 @@ public class MessagePublisherImpl implements MessagePublisher {
 	
 	@Override
 	public void publish(String message) {
-		template.send(channel, message);
+		this.template.send(channel, message);
 	}
 
 }

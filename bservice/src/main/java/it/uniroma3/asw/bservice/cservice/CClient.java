@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface CClient {
 
 	@PostMapping(value="/")
-	public String print(@RequestBody String toPrint);
+	public String post(@RequestBody String toPost);
 	
 }

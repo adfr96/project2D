@@ -16,8 +16,8 @@ public class BService {
 	private String instanceName;
 	
 	public void onMessage(String message) {
-		String toPrint = instanceName + ": " + message;
-		this.cservice.print(toPrint);
+		String toPost = instanceName + ": " + message;
+		this.cservice.post(toPost);
 	}
 
 }

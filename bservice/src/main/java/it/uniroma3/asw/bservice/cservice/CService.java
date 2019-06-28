@@ -4,22 +4,24 @@ import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 
 @Service
 public class CService {
 	
-	private final Logger log = Logger.getLogger(CService.class);
+	private static final Logger log = Logger.getLogger(CService.class);
 	
 	@Autowired
 	private CClient cClient;
 	
-
-	public void print(String toPrint) {
-		this.cClient.print(toPrint);
+	@HystrixCommand(fallbackMethod="logUnsuccessfulCall")
+	public void post(String toPost) {
+		this.cClient.post(toPost);
 	}
 	
-	public void logUnsuccessfulCall() {
-		this.log.error("B failed to call C via REST/Feign");
+	public void logUnsuccessfulCall(String toPrint) {
+		log.error("B failed to call C via REST");
 	}
 	
 }
