@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CService {
 	
-	@Value("${spring.application.name}")
-	private String cServiceName;
+	@Value("${INSTANCE_NAME:C}")  //reads env variable, or defaults to "C"
+	private String instanceName;
 	
 	private List<String> parametri;
 	
@@ -21,7 +21,7 @@ public class CService {
 	public String getParametriRichiesta() {
 		
 		StringBuilder toReturn = new StringBuilder();
-		toReturn.append(this.cServiceName);
+		toReturn.append(this.instanceName);
 		toReturn.append(": [");
 		for(String parametro : this.parametri) {
 			toReturn.append(parametro);

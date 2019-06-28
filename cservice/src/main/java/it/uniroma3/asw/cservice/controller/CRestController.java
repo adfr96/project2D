@@ -20,7 +20,7 @@ public class CRestController {
 	}
 	
 	@PostMapping(value="/")
-	public void  saveParametri(@RequestBody String toPrint) {
+	public void saveParametri(@RequestBody String toPrint) {
 		cService.saveParametri(toPrint);
 	}
 }
