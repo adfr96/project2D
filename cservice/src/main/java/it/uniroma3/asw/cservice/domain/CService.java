@@ -25,6 +25,7 @@ public class CService {
 		toReturn.append(": [");
 		for(String parametro : this.parametri) {
 			toReturn.append(parametro);
+			toReturn.append(" ");
 		}
 		toReturn.append("]");
 		

@@ -14,8 +14,8 @@ public class CService {
 	private CClient cClient;
 	
 
-	public void print(String s) {
-		this.cClient.print(s);
+	public void print(String toPrint) {
+		this.cClient.print(toPrint);
 	}
 	
 	public void logUnsuccessfulCall() {
