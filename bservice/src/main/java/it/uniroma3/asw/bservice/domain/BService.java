@@ -12,11 +12,11 @@ public class BService {
 	@Autowired
 	private CService cservice;
 	
-	@Value("${spring.application.name}")
-	private String bApplicationName;
+	@Value("${INSTANCE_NAME:B}")  //reads env variable, or defaults to "B"
+	private String instanceName;
 	
 	public void onMessage(String message) {
-		String toPrint = bApplicationName + ": " + message;
+		String toPrint = instanceName + ": " + message;
 		this.cservice.print(toPrint);
 	}
 

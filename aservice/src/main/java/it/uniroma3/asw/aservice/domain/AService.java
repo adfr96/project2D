@@ -16,8 +16,8 @@ public class AService {
 	@Autowired
 	private MessagePublisher publisher;
 	
-	@Value("${spring.application.name}")
-	private String aApplicationName;
+	@Value("${INSTANCE_NAME:A}")  //reads env variable, or defaults to "A"
+	private String instanceName;
 	
 	@Value("${animals}")
 	private String animals;
@@ -29,7 +29,7 @@ public class AService {
 		return animal;
 	}
 	public void sendMessageToB() {
-		String toB = aApplicationName + ": " + getAnimal();
+		String toB = instanceName + ": " + getAnimal();
 		this.publisher.publish(toB);
 	}
 	
