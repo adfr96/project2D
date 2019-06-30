@@ -7,8 +7,8 @@ Una volta partita la macchina virtuale vanno eseuiti i seguenti comandi:
   1. source set-docker-host-ip.sh
   2. bash start-kafka.sh
   3. bash build-docker-images.sh
-  4. bash run-all-containers.sh
+  4. bash run-all-containers.sh (o altro script per lanciare i containers)
   
   Per stoppare le appllicazioni:
-    1. bash stop-all-containers.sh
+    1. bash stop-all-containers.sh (o altro script per stoppare i containers)
     2. bash stop-kafka.sh
